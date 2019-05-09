@@ -22,7 +22,7 @@
 
   - <a href="http://jsonplaceholder.typicode.com/" target="_blank">在线模拟调试接口</a>
 
-  - [js数据类型和数据结构]()
+  - [【原创】js数据类型和数据结构](https://github.com/gouding/awesome-books/blob/master/essays/skill/front/jstype.md)
 
 #### React
 
