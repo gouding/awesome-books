@@ -140,3 +140,59 @@ array[1]  //2
 array.concat(array2)  //1 2 3 4 5 6 7 数组相连
 ```
 数组还有很多属性和方法具体可参考[MDN Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+>#### Function类型
+
+函数类型 即使用关键字申明
+```
+let fn = function (a,b){
+  return a+b
+}
+
+fn(2,3) //5
+typeof fn // 'function'
+
+```
+
+>#### RegExp类型
+
+正则表达式，是对字符串执行模式匹配的工具
+常用的匹配关键修饰符
+
+| 修饰符 |  描述 |
+| ----- | ---- |
+| i | 执行对大小写不敏感的匹配 |
+| g | 执行全局的匹配 |
+| m | 执行多行匹配 |
+
+```
+let str = 'hello denzel,hello,it\' me'
+str.replace(/hello/g,'hi')  // 'hi denzel,hi it\'s me'
+```
+具体可参考
+- [MDN 正则表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [我博客-最全正则表达式大全](http://dinglo.top/2019/04/28/reg/)
+
+>#### Date类型
+
+日期类型，取自于1970年1月1日开始的时间
+```
+var date1 = new Date('December 17, 1995 03:24:00');
+// Sun Dec 17 1995 03:24:00 GMT...
+
+var date2 = new Date('1995-12-17T03:24:00');
+// Sun Dec 17 1995 03:24:00 GMT...
+
+console.log(date1 === date2);
+// expected output: false;
+
+console.log(date1 - date2);
+// expected output: 0
+
+//获取一个不tgtjr字符串
+let str = (+new Date()).toString()  //"1557727727556"
+```
+具体可参考[MDN Date](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+
+
