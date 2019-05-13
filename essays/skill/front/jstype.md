@@ -22,11 +22,11 @@
 
 >#### 1种对象类型（引用类型）
 - Object
-  - Object对象
-  - Array
-  - Function 
-  - RegExp
-  - Date
+  - [Object对象](#Object对象)
+  - [Array](#Array类型)
+  - [Function](#Function类型)
+  - [RegExp](#RegExp类型)
+  - [Date](#Date类型)
 
 ### 原始值（值类型）
 
@@ -80,8 +80,10 @@ foo   // null
 
 >#### Undefined类型
 
-undefined它是一个全局对象的一个属性，功能跟null差不多，对值进行逻辑判断。
+undefined它是一个全局对象的一个属性，功能跟null差不多，对值进行逻辑判断,它是表示声明了一个变量，但是并未对它进行赋值
 ```
+let foo 
+console.log(foo)  //  undefined
 typeof null   // "object" 因为一些js的历史原因返回的是object
 typeof undefined  // "undefined"
 null == undefined // true
@@ -89,3 +91,52 @@ null === undefined // false
 isNaN(1+null) // false
 isNaN(1+undefined)  // true
 ```
+
+### 对象（引用类型）
+
+>#### Object对象
+
+对象是无序键值对（key-value）的集合，
+```
+let person ={
+  name:'denzel',
+  age:18,
+  'w-eight':101
+}
+//取值一
+person.name   //denzel
+//取值二
+person['age'] //18    
+person['w-eight']   // 101 若key中出现横线，要使用下标的形式进行访问
+
+delete person['age']
+person.age //undefined
+
+'name' in person  //false  该key已经删除
+////////
+person.age = undefined
+person.age   //undefined
+'name' in person //true //这个上边不一样  只是值不存在，但key是存在的
+```
+
+object对象天生支持遍历获取每一个值，使用`for-in`
+```
+let items ={name:'denzel',age:18,weight:101,height:177}
+for(let item in items){
+  console.log(`${item}--${items[item]}`)
+}
+typeof items //'object'
+```
+
+>#### Array类型
+
+数组类型
+```
+let array =[1,2,3,4,5]
+let arrar2 =[6,7]
+array.length  //5
+array[1]  //2
+
+array.concat(array2)  //1 2 3 4 5 6 7 数组相连
+```
+数组还有很多属性和方法具体可参考[MDN Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
